@@ -16,7 +16,6 @@ CSSで「傍点」を表現する`text-emphasis`に対応していないブラ�
 * 傍点のスタイルを指定可能。
 * 複数の傍点を処理可能です。
 
-
 ## 使い方
 
 HTMLの任意の場所でbauten.jsを読み込めば、_既定の変換対象_の要素に傍点が打たれます。
@@ -133,6 +132,21 @@ bauten(
 );
 </script>
 ```
+
+## 参考
+
+
+### 表示サンプル
+
+以下のスクリーンショットは、[sample.html](sample.html)を各ブラウザで表示したものです。
+
+#### Chromeでの表示
+
+![screen shot on Chrome](doc/bauten-chrome.jpg)
+
+#### Internet Exploer 11 での表示
+
+![screen shot on IE11](doc/bauten-ie.jpg)
 
 LICENSE
 -------
