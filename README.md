@@ -119,17 +119,10 @@ bauten({'className': 'text-emphasis', 'style': 'open'});
 <script type="text/javascript" src="bauten.js"></script>
 <script type="text/javascript">
 bauten(
-    {
-        'tagName': 'EM',
-        'className': 'text-emphasis',
-        'style': 'open dot'
-    },
-    {
-        'tagName': 'STRONG',
-        'className': 'text-emphasis',
-        'style': 'filled circle',
-        'color':blue
-    }
+    { 'tagName': 'EM', 'className': 'text-emphasis',
+        style': 'open dot' },
+    { 'tagName': 'STRONG', 'className': 'text-emphasis',
+        'style': 'filled circle', 'color':'blue' }
 );
 </script>
 ```
