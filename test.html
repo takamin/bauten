@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>sample of bauten</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+strong {
+    -webkit-text-emphasis: filled circle red;
+    text-emphasis: filled circle red;
+}
+</style>
+</head>
+<body>
+    <h1>sample of bauten</h1>
+<blockquote>
+    <h2>圏点</h2>
+    <p><em class="dot">圏点（けんてん）</em>、
+    <em class="sesami">傍点（ぼうてん）</em>、
+    <em>脇点（わきてん）</em>は、
+    日本語で文字の強調を行うときに、
+    <strong>親文字の脇または上下に付加する点</strong>のことである。</p>
+    <p>文字種としては、縦書きの場合は主に<span class="black-dot">黒ゴマ</span>
+    あるいは<span class="white-dot">白ゴマ</span>が使用され、
+    横書きの場合はビュレット（<span class="white-circle">黒丸</span>
+    および<span class="white-circle">白丸</span>）が使用される。
+    上記以外にも二重丸や蛇の目などが使用されることもある。</p>
+    <p><span class="black-double-circle">傍点</span>はゴマ、
+    <span class="white-double-circle">圏点</span>は丸と区別することもあるが、
+    区別しない場合も多い。</p>
+    <p><span class="black-triangle">使用方法</span>は
+    <span class="white-double-circle">強調したい1文字ごとに1圏点</span>をつける。</p>
+    <p><span class="any-char">類似の機能を持った表記方法</span>として傍線がある。</p>
+    <p>なお、圏点は満州文字の表記にも用いられるが、
+    <span class="white-sesame">日本語表記の場合とは目的が異なり</span>、
+        一種の<span class="black-sesame">ダイアクリティカルマーク</span>として付けられる。</p>
+</blockquote>
+<script type="text/javascript" src="bauten.js"></script>
+<script type="text/javascript">
+bauten(
+        { 'className': 'white-dot', 'style': 'open dot', 'color': 'blue' },
+        { 'className': 'black-dot', 'style': 'dot', 'color': 'blue' },
+        { 'className': 'white-circle', 'style': 'open circle' },
+        { 'className': 'black-circle', 'style': 'filled circle' },
+        { 'className': 'white-double-circle', 'style': 'open double-circle' },
+        { 'className': 'black-double-circle', 'style': 'filled double-circle' },
+        { 'className': 'white-triangle', 'style': 'open triangle' },
+        { 'className': 'black-triangle', 'style': 'filled triangle' },
+        { 'className': 'white-sesame', 'style': 'open sesame' },
+        { 'className': 'black-sesame', 'style': 'filled sesame' },
+        { 'className': 'any-char', 'style': '↓' },
+        { 'tagName': 'EM', 'className':'dot', 'style': 'open circle', 'color': 'gray'},
+        { 'tagName': 'EM', 'className':'sesami', 'style': 'sesame', 'color': 'gray'},
+        { 'tagName': 'EM', 'style': 'open double-circle', 'color': 'gray'},
+        { 'tagName': 'STRONG', 'style': '♪', 'color': 'cyan' }
+      );
+</script>
+</body>
+</html>
+
