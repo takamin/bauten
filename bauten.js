@@ -4,7 +4,7 @@
  * baiten - japanese-style text-emphasiser
  * Copyright (c) 2015 Koji Takami
  * Released under the MIT license
- * https://github.com/takamin/win-c/blob/master/LICENSE
+ * https://github.com/takamin/bauten/blob/master/LICENSE
  */
 (function(d) {
     function bauten(style1, style2 /* , ... */) {
