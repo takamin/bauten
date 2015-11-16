@@ -82,7 +82,7 @@ __text-emphasis-style:__
 filledとopenは省略可能です。
 filled は省略可能で、傍点が塗りつぶされることを意味し、openは、傍点が白抜きになります。
 
-その他、各指定の組み合わせで何がどのように表示されるかは[sample.html](sample.html)を表示指定確認してください。
+その他、各指定の組み合わせで何がどのように表示されるかは[sample.html](sample.html)を表示して確認してください。
 以降に画面ショットも掲載しています。
 
 #### color
