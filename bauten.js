@@ -20,9 +20,9 @@
     bauten.styleId2Ch = {
         'dot':          { 'open': 'o',  'filled': '・'},
         'circle':       { 'open': '○',  'filled': '●'},
-        'double-circle':{ 'open': '◎',  'filled': '◉'},
+        'double-circle':{ 'open': '◎',  'filled': '⦿'},
         'triangle':     { 'open': '△',  'filled': '▲'},
-        'sesame':       { 'open': '◇',  'filled': '◆'}
+        'sesame':       { 'open': '﹆',  'filled': '﹅'}
     };
     bauten._applyAll = function(elements, style) {
         if(style != null && style.style != null) {
