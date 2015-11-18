@@ -1,7 +1,7 @@
 /*
  * bauten.js - japanese-style text-emphasiser
  *
- * baiten - japanese-style text-emphasiser
+ * bauten - japanese-style text-emphasiser
  * Copyright (c) 2015 Koji Takami
  * Released under the MIT license
  * https://github.com/takamin/bauten/blob/master/LICENSE
