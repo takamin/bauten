@@ -24,6 +24,7 @@
         'triangle':     { 'open': '△',  'filled': '▲'},
         'sesame':       { 'open': '﹆',  'filled': '﹅'}
     };
+    bauten._regexIgnoredChars = /[\s　\(\)（）\[\]「」［］]/;
     bauten._applyAll = function(elements, style) {
         if(style != null && style.style != null) {
             var emphasisChar = bauten._getEmphasisChar(style);
@@ -104,7 +105,13 @@
             var rb = d.createElement('RB');
             ruby.appendChild(rb);
 
-            var text1 = d.createTextNode(text.charAt(i));
+            var pointChar = emphasisChar;
+            var c = text.charAt(i);
+            if(c.match(bauten._regexIgnoredChars)) {
+                pointChar = '';
+            }
+
+            var text1 = d.createTextNode(c);
             rb.appendChild(text1);
 
             var rt = d.createElement('RT');
@@ -112,7 +119,7 @@
             if(color != null) {
                 rt.setAttribute('style', 'color:' + color);
             }
-            rt.appendChild(d.createTextNode(emphasisChar));
+            rt.appendChild(d.createTextNode(pointChar));
         }
         return span;
     };
