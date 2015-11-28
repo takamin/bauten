@@ -29,7 +29,8 @@
             var emphasisChar = bauten._getEmphasisChar(style);
             if(emphasisChar != null) {
                 elements.forEach(function(element) {
-                    bauten._applyElement(element, emphasisChar, style.color);
+                    bauten._applyElement(element, emphasisChar, style.color,
+                            style.position);
                 });
             }
         }
@@ -62,7 +63,9 @@
         }
         return emphasisChar;
     }
-    bauten._applyElement = function(element, emphasisChar, color) {
+    bauten._applyElement = function(element, emphasisChar, color,
+            position)
+    {
         var appliedClassName = 'bauten-text-emphasis-applied';
         if(bauten._hasClass(element, appliedClassName)) {
             return;
@@ -79,7 +82,8 @@
                     newChildNodes.push(node);
                     break;
                 case 3:
-                    var em = bauten._applyText(node, emphasisChar, color);
+                    var em = bauten._applyText(node, emphasisChar, color,
+                            position);
                     em.className = appliedClassName;
                     newChildNodes.push(em);
                     break;
@@ -94,12 +98,19 @@
             element.appendChild(node);
         });
     };
-    bauten._applyText = function(textNode, emphasisChar, color) {
+    bauten._applyText = function(textNode, emphasisChar, color,
+            position)
+    {
         var span = d.createElement('SPAN');
         var text = textNode.nodeValue;
         for(var i = 0; i < text.length; i++) {
             var ruby = d.createElement('RUBY');
             span.appendChild(ruby);
+
+            if(position != null) {
+                ruby.setAttribute(
+                        'style', 'ruby-position: ' + position + ';');
+            }
 
             var rb = d.createElement('RB');
             ruby.appendChild(rb);
@@ -130,7 +141,8 @@
     };
     d.addEventListener('DOMContentLoaded', function() {
         if(bauten._styles.length == 0) {
-            bauten( { 'className': 'bauten-text-emphasis', 'style': 'filled dot' });
+            bauten( { 'className': 'bauten-text-emphasis', 'style': 'filled dot',
+                'position' : null /* [over|under] && [left|right] */ });
         }
         bauten._styles.forEach(function(style) {
             bauten._applyAll(bauten._getElementsByStyle(style), style);
