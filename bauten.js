@@ -163,6 +163,15 @@
         });
     };
     bauten._webkitApplyElement = function(element, style) {
+        var appliedClassName = 'bauten-text-emphasis-applied';
+        if(bauten._hasClass(element, appliedClassName)) {
+            return;
+        }
+        if(element.className == '') {
+            element.className = appliedClassName;
+        } else {
+            element.className += " " + appliedClassName;
+        }
         var normStyle = bauten._parseStyle(style);
         if(normStyle.length == 1) {
             if(normStyle[0] != 'none') {
