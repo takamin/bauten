@@ -65,10 +65,8 @@
             normStyle = [char_style];
         } else {
             var filled_index = 0;
-            if(char_style != null) {
-                if(fill_style != 'open' && fill_style != 'filled') {
-                    throw '"' + fill_style + '" is not recognized as text-emphasis-style';
-                }
+            if(fill_style != 'open' && fill_style != 'filled') {
+                throw '"' + fill_style + '" is not recognized as text-emphasis-style';
             }
             normStyle = [fill_style, char_style];
         }
@@ -188,21 +186,29 @@
         }
     }
     d.addEventListener('DOMContentLoaded', function() {
-        if(bauten._styles.length == 0) {
-            bauten( { 'className': 'bauten-text-emphasis', 'style': 'filled dot',
-                'position' : null /* [over|under] && [left|right] */ });
-        }
-        var applyAll = null;
-        if(bauten._isSupportedCss()) {
-            applyAll = bauten._webkitApplyAll;
-        } else {
-            applyAll = bauten._applyAll;
-        }
-        bauten._styles.forEach(function(style) {
-            if(style != null && style.style != null) {
-                applyAll(bauten._getElementsByStyle(style), style);
+        try {
+            if(bauten._styles.length == 0) {
+                bauten( { 'className': 'bauten-text-emphasis', 'style': 'filled dot',
+                    'position' : null /* [over|under] && [left|right] */ });
             }
-        });
+            var applyAll = null;
+            if(bauten._isSupportedCss()) {
+                applyAll = bauten._webkitApplyAll;
+            } else {
+                applyAll = bauten._applyAll;
+            }
+            bauten._styles.forEach(function(style) {
+                try {
+                    if(style != null && style.style != null) {
+                        applyAll(bauten._getElementsByStyle(style), style);
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
     });
     window['bauten'] = bauten;
 })(document);
